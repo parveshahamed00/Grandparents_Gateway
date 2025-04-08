@@ -59,5 +59,31 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+router.get("/profile/:g_id", async (req, res) => {
+  try {
+    const { g_id } = req.params;
 
+    if (!g_id) {
+      return res.status(400).json({ message: "g_id is required" });
+    }
+
+    const user = await GrandParent.findOne({ g_id });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Return user profile data
+    res.status(200).json({
+      _id: user._id,
+      fullName: user.fullName,
+      gender: user.gender,
+      age: user.age,
+      phoneNumber: user.phoneNumber,
+      g_id: user.g_id
+    });
+  } catch (err) {
+    console.error("Error fetching user profile:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 module.exports = router;

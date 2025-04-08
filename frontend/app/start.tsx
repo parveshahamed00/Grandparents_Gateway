@@ -10,7 +10,7 @@ export default function StartScreen() {
   };
 
   const handleAdminPress = () => {
-    console.log('Admin button pressed');
+    router.push('/medicalprofessionalAuth');
   };
 
   return (

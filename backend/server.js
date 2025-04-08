@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const grandparentRoutes = require("./routes/grandparentRoutes");
+const medicalProfessionalRoutes = require("./routes/medicalProfessionalRoute");
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.get('/', (req, res) => {
 });
 
 app.use("/", grandparentRoutes);
+app.use("/", medicalProfessionalRoutes);
+
 
 
 

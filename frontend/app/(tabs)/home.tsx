@@ -1,17 +1,3 @@
-// // app/(tabs)/home.tsx
-// import { View, Text } from 'react-native';
-// import { useAuth } from '../AuthContext'; // adjust path based on where your AuthContext is
-
-// export default function HomeScreen() {
-//   const { gId } = useAuth(); // get the gId from context
-
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text style={{ fontSize: 22 }}>🏡 Home Screen</Text>
-//       <Text style={{ marginTop: 10, fontSize: 18 }}>Grandparent ID: {gId}</Text>
-//     </View>
-//   );
-// }import React from "react";
 import { View, Text, TouchableOpacity, ImageBackground, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 
